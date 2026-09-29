@@ -1,0 +1,82 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions for secure role verification
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isAuthenticated() && (
+        request.auth.token.role == 'admin' ||
+        request.auth.token.admin == true ||
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid))
+      );
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // Public read for published Exam Categories and Mock Tests
+    match /exam_categories/{catId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /mock_tests/{testId} {
+      allow read: if resource.data.isPublished == true || isAdmin();
+      allow write: if isAdmin();
+    }
+
+    // Question Bank — Admin write only, questions can be queried by enrolled students
+    match /questions/{questionId} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+
+    // Student User Profiles
+    match /users/{userId} {
+      allow read: if isOwner(userId) || isAdmin();
+      allow create: if isAuthenticated() && request.auth.uid == userId;
+      allow update: if isOwner(userId) || isAdmin();
+      allow delete: if isAdmin();
+    }
+
+    // Admin List (Only existing Admins can read/modify admin accounts)
+    match /admins/{adminId} {
+      allow read, write: if isAdmin();
+    }
+
+    // Student Test Attempts
+    match /test_attempts/{attemptId} {
+      allow read: if isAuthenticated() && (resource.data.userId == request.auth.uid || isAdmin());
+      allow create: if isAuthenticated() && request.resource.data.userId == request.auth.uid;
+      allow update, delete: if isAdmin();
+    }
+
+    // Payment Orders & Entitlements
+    // CRITICAL: Writing to entitlements is strictly restricted to Backend Cloud Functions or Admin
+    match /entitlements/{entitlementId} {
+      allow read: if isAuthenticated() && (resource.data.studentEmail == request.auth.token.email || isAdmin());
+      allow write: if isAdmin();
+    }
+
+    match /orders/{orderId} {
+      allow read: if isAuthenticated() && (resource.data.studentEmail == request.auth.token.email || isAdmin());
+      allow write: if isAdmin();
+    }
+
+    // Study Materials & Courses
+    match /courses/{courseId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /study_materials/{matId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+  }
+}

@@ -1,0 +1,28 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isAuthenticated() && (
+        request.auth.token.role == 'admin' ||
+        request.auth.token.admin == true
+      );
+    }
+
+    // Public PDFs and study material notes can be read by anyone, but only uploaded/deleted by admins
+    match /study_materials/{fileName} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Profile photos
+    match /avatars/{userId}/{fileName} {
+      allow read: if true;
+      allow write: if isAuthenticated() && request.auth.uid == userId;
+    }
+  }
+}

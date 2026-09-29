@@ -1,0 +1,6 @@
+{
+  "name": "WBTOPPER",
+  "description": "Premium competitive and nursing exam preparation platform with mock tests, courses, and hidden admin portal.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

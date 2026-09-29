@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">WBTOPPER</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_courses">Courses</string>
+    <string name="nav_mock_tests">Mock Tests</string>
+    <string name="nav_study_materials">Study Materials</string>
+    <string name="nav_profile">Profile</string>
+</resources>

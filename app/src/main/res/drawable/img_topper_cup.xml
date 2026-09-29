@@ -1,0 +1,50 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+
+    <!-- Golden Trophy Cup -->
+    <!-- Base Plate -->
+    <path
+        android:fillColor="#78350F"
+        android:pathData="M35,102 H85 V110 H35 Z" />
+    <path
+        android:fillColor="#B45309"
+        android:pathData="M40,94 H80 V102 H40 Z" />
+    <!-- Stem -->
+    <path
+        android:fillColor="#D97706"
+        android:pathData="M54,78 H66 V94 H54 Z" />
+    <!-- Cup Body -->
+    <path
+        android:fillColor="#FBBF24"
+        android:pathData="M35,25 H85 V52 C85,68 74,78 60,78 C46,78 35,68 35,52 Z" />
+    <!-- Cup Inner Shading -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M40,28 H80 V52 C80,64 71,72 60,72 C49,72 40,64 40,52 Z" />
+    <!-- Handles Left -->
+    <path
+        android:strokeColor="#F59E0B"
+        android:strokeWidth="5"
+        android:fillColor="#00000000"
+        android:pathData="M35,35 C20,35 20,55 35,58" />
+    <!-- Handles Right -->
+    <path
+        android:strokeColor="#F59E0B"
+        android:strokeWidth="5"
+        android:fillColor="#00000000"
+        android:pathData="M85,35 C100,35 100,55 85,58" />
+    <!-- Star on Cup -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M60,38 L62.5,44.5 L69,45 L64,49.5 L65.5,56 L60,52.5 L54.5,56 L56,49.5 L51,45 L57.5,44.5 Z" />
+    <!-- Sparkles -->
+    <path
+        android:fillColor="#FEF08A"
+        android:pathData="M95,20 L97,25 L102,27 L97,29 L95,34 L93,29 L88,27 L93,25 Z" />
+    <path
+        android:fillColor="#FEF08A"
+        android:pathData="M25,18 L26.5,22 L30.5,23.5 L26.5,25 L25,29 L23.5,25 L19.5,23.5 L23.5,22 Z" />
+</vector>

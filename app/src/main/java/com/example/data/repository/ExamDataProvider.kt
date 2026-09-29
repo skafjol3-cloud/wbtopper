@@ -1,0 +1,855 @@
+package com.example.data.repository
+
+import com.example.data.model.*
+
+object ExamDataProvider {
+
+    val examCategories = listOf(
+        ExamCategory(
+            id = "jenpas_ug_2026",
+            name = "JENPAS-UG 2026",
+            year = "2026",
+            code = "JENPAS_UG",
+            subtitle = "Joint Entrance Nursing & Paramedical Allied Sciences...",
+            isNew = true,
+            isPremium = false,
+            totalTests = 35,
+            totalCandidates = "28.5K+",
+            description = "WBJEEB Joint Entrance for B.Sc. Nursing, BPT, BMLT and Allied Paramedical Courses.",
+            syllabusSummary = "Physics, Chemistry, Biology, Basic English, Logical Reasoning",
+            categoryGroup = "Nursing Entrance"
+        ),
+        ExamCategory(
+            id = "anm_gnm_2026",
+            name = "ANM GNM 2026",
+            year = "2026",
+            code = "ANM_GNM",
+            subtitle = "Auxiliary Nurse Midwifery / General Nursing",
+            isNew = true,
+            isPremium = false,
+            totalTests = 48,
+            totalCandidates = "52.8K+",
+            description = "WBJEEB ANM (R) & GNM Joint Entrance Examination for Nursing Training.",
+            syllabusSummary = "Life Science, Physical Science, Mathematics, English, General Knowledge, Logical Reasoning",
+            categoryGroup = "Nursing Entrance"
+        ),
+        ExamCategory(
+            id = "culet_2026",
+            name = "CULET 2026",
+            year = "2026",
+            code = "CULET",
+            subtitle = "Calcutta University Law Entrance Test",
+            isNew = true,
+            isPremium = false,
+            totalTests = 18,
+            totalCandidates = "9.4K+",
+            description = "Calcutta University Law Entrance Test 2026.",
+            syllabusSummary = "English Language, General Knowledge, Current Affairs, Legal Aptitude",
+            categoryGroup = "Law & Professional Entrance"
+        ),
+        ExamCategory(
+            id = "jeca_2026",
+            name = "JECA 2026",
+            year = "2026",
+            code = "JECA",
+            subtitle = "Joint Entrance for MCA",
+            isNew = true,
+            isPremium = false,
+            totalTests = 22,
+            totalCandidates = "12.1K+",
+            description = "Joint Entrance for Master of Computer Applications (MCA) in West Bengal 2026.",
+            syllabusSummary = "Computer Science, Data Structures, Discrete Mathematics, OOP Concepts",
+            categoryGroup = "Technical Entrance"
+        ),
+        ExamCategory(
+            id = "jelet_2026",
+            name = "JELET 2026",
+            year = "2026",
+            code = "JELET",
+            subtitle = "Lateral Entry for Engineering",
+            isNew = true,
+            isPremium = false,
+            totalTests = 24,
+            totalCandidates = "10.8K+",
+            description = "Joint Entrance for Lateral Entry to 2nd year B.Tech / B.Pharm in West Bengal 2026.",
+            syllabusSummary = "Mathematics, Physics, Chemistry, Engineering Mechanics",
+            categoryGroup = "Technical Entrance"
+        ),
+        ExamCategory(
+            id = "jemscn_2026",
+            name = "JEMScN 2026",
+            year = "2026",
+            code = "JEMSCN",
+            subtitle = "M.Sc Nursing Entrance",
+            isNew = true,
+            isPremium = false,
+            totalTests = 26,
+            totalCandidates = "7.5K+",
+            description = "Joint Entrance for M.Sc. Nursing in West Bengal Colleges 2026.",
+            syllabusSummary = "Advanced Anatomy, Medical-Surgical Nursing, Nursing Education, Research & Biostatistics",
+            categoryGroup = "Postgraduate Nursing"
+        ),
+        ExamCategory(
+            id = "jepbn_2026",
+            name = "JEPBN 2026",
+            year = "2026",
+            code = "JEPBN",
+            subtitle = "Post Basic B.Sc Nursing",
+            isNew = true,
+            isPremium = false,
+            totalTests = 24,
+            totalCandidates = "8.2K+",
+            description = "Joint Entrance for Post Basic B.Sc. Nursing Degree Entrance 2026.",
+            syllabusSummary = "Anatomy, Nutrition, Microbiology, Medical Surgical Nursing, Mental Health",
+            categoryGroup = "Post Basic Nursing"
+        ),
+        ExamCategory(
+            id = "aibe_2026",
+            name = "AIBE (21) 2026",
+            year = "2026",
+            code = "AIBE",
+            subtitle = "All India Bar Examination",
+            isNew = true,
+            isPremium = false,
+            totalTests = 16,
+            totalCandidates = "15.0K+",
+            description = "All India Bar Examination 2026 for legal practitioners.",
+            syllabusSummary = "Constitutional Law, CrPC, CPC, Evidence Act, Family Law, Law of Torts",
+            categoryGroup = "Law & Professional Entrance"
+        ),
+        ExamCategory(
+            id = "pharmacist_grade_3",
+            name = "Pharmacist Grade-III Mock Test",
+            year = "2026",
+            code = "PHARMACIST_GR3",
+            subtitle = "WBHRB Pharmacy Recruitment",
+            isNew = false,
+            isPremium = false,
+            totalTests = 30,
+            totalCandidates = "18.8K+",
+            description = "West Bengal Health Recruitment Board (WBHRB) Pharmacist Grade III.",
+            syllabusSummary = "Pharmaceutics, Pharmacology, Pharmaceutical Chemistry, Hospital Pharmacy",
+            categoryGroup = "Pharmacy Recruitment"
+        ),
+        ExamCategory(
+            id = "wb_cho_mocktest",
+            name = "WB CHO Mock Test",
+            year = "2026",
+            code = "WB_CHO",
+            subtitle = "Community Health Officer",
+            isNew = false,
+            isPremium = false,
+            totalTests = 32,
+            totalCandidates = "24.1K+",
+            description = "Community Health Officer (CHO) recruitment exam by West Bengal Health Department.",
+            syllabusSummary = "Community Health Nursing, Primary Health Care, Maternal & Child Health, Communicable Diseases",
+            categoryGroup = "Community Health"
+        ),
+        ExamCategory(
+            id = "norcet_10",
+            name = "NORCET 10 Mock Test",
+            year = "2026",
+            code = "NORCET_10",
+            subtitle = "AIIMS Central Nursing Officer",
+            isNew = false,
+            isPremium = true,
+            totalTests = 36,
+            totalCandidates = "38.0K+",
+            description = "AIIMS Nursing Officer Recruitment Common Eligibility Test (NORCET 10).",
+            syllabusSummary = "Nursing Fundamentals, Critical Care, Medical-Surgical, Pediatrics, Obstetrics, General Aptitude",
+            categoryGroup = "National Nursing Officer"
+        ),
+        ExamCategory(
+            id = "paramedical_2026",
+            name = "Paramedical 2026 Mock Test",
+            year = "2026",
+            code = "PARAMEDICAL",
+            subtitle = "SMFWB Paramedical Entrance",
+            isNew = false,
+            isPremium = false,
+            totalTests = 28,
+            totalCandidates = "14.6K+",
+            description = "State Medical Faculty of West Bengal (SMFWB) Paramedical Entrance.",
+            syllabusSummary = "Physics, Chemistry, Biology, Medical Laboratory Technology Basics",
+            categoryGroup = "Allied Paramedical & Nursing"
+        ),
+        ExamCategory(
+            id = "rrb_nursing",
+            name = "RRB Nursing Superintendent",
+            year = "2026",
+            code = "RRB_NURSE",
+            subtitle = "Railway Staff Nurse & Supt.",
+            isNew = false,
+            isPremium = true,
+            totalTests = 30,
+            totalCandidates = "29.2K+",
+            description = "Railway Recruitment Board (RRB) Staff Nurse & Nursing Superintendent Posts.",
+            syllabusSummary = "Professional Nursing Subjects, General Arithmetic, General Intelligence, General Science",
+            categoryGroup = "Railway & Central Recruitment"
+        ),
+        ExamCategory(
+            id = "wbhrb_sn_2",
+            name = "WBHRB Staff Nurse Grade II",
+            year = "2026",
+            code = "WBHRB_SN",
+            subtitle = "Staff Nurse Grade II Recruitment",
+            isNew = false,
+            isPremium = true,
+            totalTests = 42,
+            totalCandidates = "34.5K+",
+            description = "West Bengal Health Recruitment Board Staff Nurse Grade II recruitment examination.",
+            syllabusSummary = "Nursing Foundations, Medical-Surgical Nursing, Midwifery & Obstetrical Nursing, Community Health, Pharmacology",
+            categoryGroup = "Staff Nurse Recruitment"
+        ),
+        ExamCategory(
+            id = "esic_nursing",
+            name = "ESIC Nursing",
+            year = "2026",
+            code = "ESIC_NURSE",
+            subtitle = "ESIC Nursing Officer All India",
+            isNew = false,
+            isPremium = true,
+            totalTests = 26,
+            totalCandidates = "22.4K+",
+            description = "Employees' State Insurance Corporation Nursing Officer All India Recruitment.",
+            syllabusSummary = "Clinical Nursing, Emergency Management, Med-Surg, General Awareness",
+            categoryGroup = "Central Government Jobs"
+        ),
+        ExamCategory(
+            id = "aiims_nursing",
+            name = "AIIMS Nursing",
+            year = "2026",
+            code = "AIIMS_NURSE",
+            subtitle = "National B.Sc & M.Sc Nursing",
+            isNew = false,
+            isPremium = true,
+            totalTests = 28,
+            totalCandidates = "19.8K+",
+            description = "AIIMS B.Sc. & M.Sc. Nursing National Entrance Test Series.",
+            syllabusSummary = "Physics, Chemistry, Biology, General Knowledge, Nursing Fundamentals",
+            categoryGroup = "National Nursing Entrance"
+        )
+    )
+
+    val sampleQuestions = listOf(
+        Question(
+            id = "q1",
+            testId = "test_wbhrb_sn_1",
+            questionNumber = 1,
+            questionText = "Which cranial nerve is primarily responsible for transmitting visual impulses from the retina to the occipital lobe?",
+            options = listOf("Olfactory Nerve (CN I)", "Optic Nerve (CN II)", "Oculomotor Nerve (CN III)", "Trochlear Nerve (CN IV)"),
+            correctOptionIndex = 1,
+            explanation = "The Optic Nerve (Cranial Nerve II) is purely sensory and carries visual impulses from the retinal ganglion cells to the visual cortex of the occipital lobe.",
+            subject = "Anatomy & Physiology",
+            topic = "Nervous System",
+            difficulty = "Easy"
+        ),
+        Question(
+            id = "q2",
+            testId = "test_wbhrb_sn_1",
+            questionNumber = 2,
+            questionText = "What is the normal physiological range of adult arterial blood pH in healthy individuals?",
+            options = listOf("6.85 – 7.15", "7.20 – 7.30", "7.35 – 7.45", "7.50 – 7.65"),
+            correctOptionIndex = 2,
+            explanation = "Normal adult arterial blood pH is tightly regulated between 7.35 and 7.45. A pH below 7.35 represents acidemia, while a pH above 7.45 represents alkalemia.",
+            subject = "Physiology",
+            topic = "Acid-Base Balance",
+            difficulty = "Medium"
+        ),
+        Question(
+            id = "q3",
+            testId = "test_wbhrb_sn_1",
+            questionNumber = 3,
+            questionText = "Which pharmacological agent is recognized as the specific antidote for unfractionated heparin toxicity?",
+            options = listOf("Vitamin K1 (Phytonadione)", "Protamine Sulfate", "Naloxone Hydrochloride", "Calcium Gluconate"),
+            correctOptionIndex = 1,
+            explanation = "Protamine Sulfate is a strongly basic peptide that binds negatively charged heparin molecules to form a stable, inactive salt complex, reversing anticoagulation.",
+            subject = "Pharmacology",
+            topic = "Anticoagulants",
+            difficulty = "Medium"
+        ),
+        Question(
+            id = "q4",
+            testId = "test_wbhrb_sn_1",
+            questionNumber = 4,
+            questionText = "Which class of immunoglobulin is capable of actively crossing the placental barrier to confer passive immunity to the fetus?",
+            options = listOf("Immunoglobulin A (IgA)", "Immunoglobulin E (IgE)", "Immunoglobulin G (IgG)", "Immunoglobulin M (IgM)"),
+            correctOptionIndex = 2,
+            explanation = "IgG is the only class of antibodies capable of crossing the maternal placenta, protecting neonates during the initial months of life.",
+            subject = "Microbiology & Immunology",
+            topic = "Immunity",
+            difficulty = "Easy"
+        ),
+        Question(
+            id = "q5",
+            testId = "test_wbhrb_sn_1",
+            questionNumber = 5,
+            questionText = "According to Indian Public Health Standards (IPHS), what is the population norm for a Primary Health Centre (PHC) in plain areas?",
+            options = listOf("20,000", "30,000", "50,000", "80,000"),
+            correctOptionIndex = 1,
+            explanation = "In plain areas, a Primary Health Centre (PHC) caters to a population norm of 30,000 individuals, while in hilly and tribal terrains it covers 20,000.",
+            subject = "Community Health Nursing",
+            topic = "Health Systems in India",
+            difficulty = "Medium"
+        ),
+        Question(
+            id = "q6",
+            testId = "test_wbhrb_sn_1",
+            questionNumber = 6,
+            questionText = "Which cardiac valve prevents retrograde blood flow from the left ventricle into the left atrium during ventricular systole?",
+            options = listOf("Tricuspid Valve", "Mitral (Bicuspid) Valve", "Aortic Valve", "Pulmonary Valve"),
+            correctOptionIndex = 1,
+            explanation = "The Mitral (bicuspid) valve closes during left ventricular systole to ensure forward ejectile flow through the aortic valve into systemic circulation.",
+            subject = "Cardiovascular Nursing",
+            topic = "Valvular Physiology",
+            difficulty = "Easy"
+        ),
+        Question(
+            id = "q7",
+            testId = "test_wbhrb_sn_1",
+            questionNumber = 7,
+            questionText = "When positioning an unconscious post-ictal patient without cervical spine trauma, which position is optimal to maintain a patent airway and prevent aspiration?",
+            options = listOf("Supine position", "Recovery position (Lateral recumbent)", "Trendelenburg position", "High Fowler's position"),
+            correctOptionIndex = 1,
+            explanation = "The lateral recovery position allows saliva and emesis to drain freely by gravity, preventing tongue retroversion and airway obstruction in unconscious patients.",
+            subject = "Nursing Foundations",
+            topic = "Patient Positioning",
+            difficulty = "Medium"
+        ),
+        Question(
+            id = "q8",
+            testId = "test_wbhrb_sn_1",
+            questionNumber = 8,
+            questionText = "The causative microbial pathogen responsible for pulmonary tuberculosis in humans is:",
+            options = listOf("Streptococcus pneumoniae", "Mycobacterium tuberculosis", "Corynebacterium diphtheriae", "Haemophilus influenzae"),
+            correctOptionIndex = 1,
+            explanation = "Mycobacterium tuberculosis is an obligate aerobic, acid-fast bacillus (AFB) transmitted via airborne droplets, primarily infecting pulmonary alveoli.",
+            subject = "Microbiology",
+            topic = "Infectious Diseases",
+            difficulty = "Easy"
+        )
+    )
+
+    val mockTests = listOf(
+        // WBHRB Staff Nurse Grade II Series
+        MockTest(
+            id = "test_wbhrb_sn_1",
+            title = "WBHRB Staff Nurse Grade II Grand Mock 01 (All-Bengal Open)",
+            examCode = "WBHRB_SN",
+            subject = "Nursing Foundation & Med-Surg",
+            topic = "Clinical & Triage Scenarios",
+            durationMinutes = 75,
+            totalQuestions = 8,
+            totalMarks = 8.0,
+            positiveMarks = 1.0,
+            negativeMarks = 0.25,
+            isFree = true,
+            isPublished = true,
+            price = 0.0,
+            attemptsCount = 4820,
+            displayOrder = 1,
+            instructions = "Negative marking of 0.25 mark per wrong answer. Duration: 75 mins.",
+            questions = sampleQuestions
+        ),
+        MockTest(
+            id = "test_wbhrb_sn_2",
+            title = "WBHRB Staff Nurse Grade II Clinical Pharmacology & Med-Surg 02",
+            examCode = "WBHRB_SN",
+            subject = "Pharmacology & Critical Care",
+            topic = "Advanced Drug Formulations & Emergency Care",
+            durationMinutes = 75,
+            totalQuestions = 8,
+            totalMarks = 8.0,
+            positiveMarks = 1.0,
+            negativeMarks = 0.25,
+            isFree = false,
+            isPublished = true,
+            price = 199.0,
+            attemptsCount = 2310,
+            displayOrder = 2,
+            instructions = "Premium mock test. Unlocked with WBTOPPER ₹199 All-Access package.",
+            questions = sampleQuestions
+        ),
+        MockTest(
+            id = "test_wbhrb_sn_3",
+            title = "WBHRB Staff Nurse Grade II Midwifery & Community Health 03",
+            examCode = "WBHRB_SN",
+            subject = "Obstetrics, Gynecological Nursing & CHN",
+            topic = "IPHS Norms & Maternal Care",
+            durationMinutes = 75,
+            totalQuestions = 8,
+            totalMarks = 8.0,
+            positiveMarks = 1.0,
+            negativeMarks = 0.25,
+            isFree = false,
+            isPublished = true,
+            price = 199.0,
+            attemptsCount = 1890,
+            displayOrder = 3,
+            instructions = "Premium mock test. Unlocked with WBTOPPER ₹199 All-Access package.",
+            questions = sampleQuestions
+        ),
+        MockTest(
+            id = "test_wbhrb_sn_4",
+            title = "WBHRB Staff Nurse Grade II 5-Year Previous Exam Solved Paper",
+            examCode = "WBHRB_SN",
+            subject = "Complete Official Syllabus",
+            topic = "Past 5-Year High-Yield Repeat Questions",
+            durationMinutes = 90,
+            totalQuestions = 8,
+            totalMarks = 8.0,
+            positiveMarks = 1.0,
+            negativeMarks = 0.25,
+            isFree = false,
+            isPublished = true,
+            price = 199.0,
+            attemptsCount = 3120,
+            displayOrder = 4,
+            instructions = "Premium mock test. Unlocked with WBTOPPER ₹199 All-Access package.",
+            questions = sampleQuestions
+        ),
+
+        // JENPAS-UG 2026 Series
+        MockTest(
+            id = "test_jenpas_1",
+            title = "JENPAS-UG 2026 Grand Mock Series #01 (State Level)",
+            examCode = "JENPAS_UG",
+            subject = "Biology, Physics & Chemistry",
+            topic = "B.Sc. Nursing & Allied Entrance",
+            durationMinutes = 90,
+            totalQuestions = 8,
+            totalMarks = 8.0,
+            positiveMarks = 1.0,
+            negativeMarks = 0.25,
+            isFree = true,
+            isPublished = true,
+            price = 0.0,
+            attemptsCount = 4120,
+            displayOrder = 1,
+            instructions = "Free diagnostic mock test. Category 1 & Category 2 questions.",
+            questions = sampleQuestions
+        ),
+        MockTest(
+            id = "test_jenpas_2",
+            title = "JENPAS-UG 2026 Biology High-Yield Master Drill 02",
+            examCode = "JENPAS_UG",
+            subject = "Biological Sciences & Human Physiology",
+            topic = "Genetics, Cytology & Human Systems",
+            durationMinutes = 90,
+            totalQuestions = 8,
+            totalMarks = 8.0,
+            positiveMarks = 1.0,
+            negativeMarks = 0.25,
+            isFree = false,
+            isPublished = true,
+            price = 199.0,
+            attemptsCount = 2850,
+            displayOrder = 2,
+            instructions = "Premium mock test. Unlocked with WBTOPPER ₹199 All-Access package.",
+            questions = sampleQuestions
+        ),
+        MockTest(
+            id = "test_jenpas_3",
+            title = "JENPAS-UG 2026 Physics, Chemistry & Logical Reasoning 03",
+            examCode = "JENPAS_UG",
+            subject = "Physical Sciences & Reasoning",
+            topic = "Mechanics, Organic Chemistry & Analytical Logic",
+            durationMinutes = 90,
+            totalQuestions = 8,
+            totalMarks = 8.0,
+            positiveMarks = 1.0,
+            negativeMarks = 0.25,
+            isFree = false,
+            isPublished = true,
+            price = 199.0,
+            attemptsCount = 1940,
+            displayOrder = 3,
+            instructions = "Premium mock test. Unlocked with WBTOPPER ₹199 All-Access package.",
+            questions = sampleQuestions
+        ),
+
+        // ANM GNM 2026 Series
+        MockTest(
+            id = "test_anm_gnm_1",
+            title = "ANM GNM 2026 Life Science & General Aptitude Mock 01",
+            examCode = "ANM_GNM",
+            subject = "Life Science & Physical Science",
+            topic = "State Entrance Core Syllabus",
+            durationMinutes = 60,
+            totalQuestions = 8,
+            totalMarks = 8.0,
+            positiveMarks = 1.0,
+            negativeMarks = 0.25,
+            isFree = true,
+            isPublished = true,
+            price = 0.0,
+            attemptsCount = 5940,
+            displayOrder = 1,
+            instructions = "WBJEEB ANM GNM pattern. Positive +1, Negative -0.25.",
+            questions = sampleQuestions
+        ),
+        MockTest(
+            id = "test_anm_gnm_2",
+            title = "ANM GNM 2026 Mathematics, English & General Knowledge 02",
+            examCode = "ANM_GNM",
+            subject = "Aptitude, Arithmetic & Grammar",
+            topic = "Class 10 Standard Competitive Math & Grammar",
+            durationMinutes = 60,
+            totalQuestions = 8,
+            totalMarks = 8.0,
+            positiveMarks = 1.0,
+            negativeMarks = 0.25,
+            isFree = false,
+            isPublished = true,
+            price = 199.0,
+            attemptsCount = 3410,
+            displayOrder = 2,
+            instructions = "Premium mock test. Unlocked with WBTOPPER ₹199 All-Access package.",
+            questions = sampleQuestions
+        ),
+        MockTest(
+            id = "test_anm_gnm_3",
+            title = "ANM GNM 2026 Full Syllabus Rank Booster Mock 03",
+            examCode = "ANM_GNM",
+            subject = "Complete Combined Syllabus",
+            topic = "Rank Booster Grand Test",
+            durationMinutes = 90,
+            totalQuestions = 8,
+            totalMarks = 8.0,
+            positiveMarks = 1.0,
+            negativeMarks = 0.25,
+            isFree = false,
+            isPublished = true,
+            price = 199.0,
+            attemptsCount = 2980,
+            displayOrder = 3,
+            instructions = "Premium mock test. Unlocked with WBTOPPER ₹199 All-Access package.",
+            questions = sampleQuestions
+        ),
+
+        // NORCET 10 AIIMS Series
+        MockTest(
+            id = "test_norcet_1",
+            title = "NORCET 10 AIIMS Nursing Officer All-India Mock 01",
+            examCode = "NORCET_10",
+            subject = "Clinical Nursing Scenarios & Image Questions",
+            topic = "National Standard Stage-1 Paper",
+            durationMinutes = 90,
+            totalQuestions = 8,
+            totalMarks = 8.0,
+            positiveMarks = 1.0,
+            negativeMarks = 0.33,
+            isFree = true,
+            isPublished = true,
+            price = 0.0,
+            attemptsCount = 3710,
+            displayOrder = 1,
+            instructions = "AIIMS NORCET pattern. Positive +1, Negative -0.33.",
+            questions = sampleQuestions
+        ),
+        MockTest(
+            id = "test_norcet_2",
+            title = "NORCET 10 Stage-2 Clinical Scenario & Skill Triage 02",
+            examCode = "NORCET_10",
+            subject = "Emergency, ICU, OT & Pediatric Protocols",
+            topic = "Stage-2 Scenario Based Questions",
+            durationMinutes = 90,
+            totalQuestions = 8,
+            totalMarks = 8.0,
+            positiveMarks = 1.0,
+            negativeMarks = 0.33,
+            isFree = false,
+            isPublished = true,
+            price = 199.0,
+            attemptsCount = 2190,
+            displayOrder = 2,
+            instructions = "Premium mock test. Unlocked with WBTOPPER ₹199 All-Access package.",
+            questions = sampleQuestions
+        ),
+
+        // RRB Nursing Superintendent Series
+        MockTest(
+            id = "test_rrb_1",
+            title = "RRB Nursing Superintendent Practice Paper 01",
+            examCode = "RRB_NURSE",
+            subject = "Railway Health Cadre Syllabus",
+            topic = "General Science & Clinical Practice",
+            durationMinutes = 90,
+            totalQuestions = 8,
+            totalMarks = 8.0,
+            positiveMarks = 1.0,
+            negativeMarks = 0.33,
+            isFree = true,
+            isPublished = true,
+            price = 0.0,
+            attemptsCount = 2810,
+            displayOrder = 1,
+            instructions = "Railway Recruitment Board Health cadre pattern.",
+            questions = sampleQuestions
+        ),
+        MockTest(
+            id = "test_rrb_2",
+            title = "RRB Nursing Superintendent Full Length Mock 02",
+            examCode = "RRB_NURSE",
+            subject = "Nursing Professional Subjects & Arithmetic",
+            topic = "Technical & Non-Technical Sections",
+            durationMinutes = 90,
+            totalQuestions = 8,
+            totalMarks = 8.0,
+            positiveMarks = 1.0,
+            negativeMarks = 0.33,
+            isFree = false,
+            isPublished = true,
+            price = 199.0,
+            attemptsCount = 1650,
+            displayOrder = 2,
+            instructions = "Premium mock test. Unlocked with WBTOPPER ₹199 All-Access package.",
+            questions = sampleQuestions
+        ),
+
+        // WB CHO Series
+        MockTest(
+            id = "test_wb_cho_1",
+            title = "WB CHO Community Health Officer Screening Mock 01",
+            examCode = "WB_CHO",
+            subject = "Community Health & Primary Health Systems",
+            topic = "National Health Programs & Sub-Centre Protocols",
+            durationMinutes = 60,
+            totalQuestions = 8,
+            totalMarks = 8.0,
+            positiveMarks = 1.0,
+            negativeMarks = 0.25,
+            isFree = true,
+            isPublished = true,
+            price = 0.0,
+            attemptsCount = 3200,
+            displayOrder = 1,
+            instructions = "NHM West Bengal Community Health Officer examination format.",
+            questions = sampleQuestions
+        ),
+        MockTest(
+            id = "test_wb_cho_2",
+            title = "WB CHO Maternal & Child Health Protocol Mock 02",
+            examCode = "WB_CHO",
+            subject = "Maternal & Child Health Care",
+            topic = "Immunization, Antenatal Care & Nutrition Programs",
+            durationMinutes = 60,
+            totalQuestions = 8,
+            totalMarks = 8.0,
+            positiveMarks = 1.0,
+            negativeMarks = 0.25,
+            isFree = false,
+            isPublished = true,
+            price = 199.0,
+            attemptsCount = 1840,
+            displayOrder = 2,
+            instructions = "Premium mock test. Unlocked with WBTOPPER ₹199 All-Access package.",
+            questions = sampleQuestions
+        )
+    )
+
+    val initialEntitlements = listOf(
+        // Student has purchased WB CHO category package as a demonstration of purchased access
+        StudentEntitlement(
+            id = "ent_demo_wb_cho",
+            studentEmail = "priyanka.mondal@gmail.com",
+            examCode = "WB_CHO",
+            packagePrice = 199.0,
+            orderId = "order_wb_cho_demo_891",
+            paymentId = "pay_wb_cho_demo_891",
+            status = "ACTIVE",
+            isPermanent = true
+        )
+    )
+
+    val courses = listOf(
+        Course(
+            id = "course_wbhrb_sn_booster",
+            title = "WBHRB Staff Nurse Grade II 2026 Target Selection Batch",
+            examCode = "WBHRB_SN",
+            description = "Comprehensive master preparation program with clinical case questions, pharmacology charts, and official WBHRB syllabus review.",
+            instructor = "WBTOPPER Senior Nursing Faculty",
+            price = 699.0,
+            originalPrice = 1999.0,
+            rating = 4.9,
+            enrolledCount = 1480,
+            totalLessons = 36,
+            totalMockTests = 16,
+            isEnrolled = true,
+            isFeatured = true,
+            isPremium = true,
+            lessons = listOf(
+                Lesson("l1", "course_wbhrb_sn_booster", "Unit 1: Cardiovascular System", "Hemodynamics & ECG Rhythm Interpretation", "42:15 min", "", true, "Cardiovascular_HighYield_Notes.pdf"),
+                Lesson("l2", "course_wbhrb_sn_booster", "Unit 1: Cardiovascular System", "Valvular Disorders & Heart Failure Management", "38:40 min", "", false, "Heart_Failure_Clinical_Summary.pdf"),
+                Lesson("l3", "course_wbhrb_sn_booster", "Unit 2: Pharmacology", "Emergency Drug Dilutions & Calculation Formulas", "45:10 min", "", false, "Emergency_Drugs_Handbook.pdf"),
+                Lesson("l4", "course_wbhrb_sn_booster", "Unit 3: Maternal Health", "Partograph Interpretation & Labor Management", "50:00 min", "", false, "Obstetrics_Partograph_Guide.pdf")
+            )
+        ),
+        Course(
+            id = "course_anm_gnm_mastery",
+            title = "ANM GNM 2026 Complete Ranker Batch",
+            examCode = "ANM_GNM",
+            description = "Detailed classes covering Class 10 Life Sciences, Physical Sciences, Arithmetic, English, and Logical Reasoning with 10-year question breakdown.",
+            instructor = "Academic Science & Nursing Team",
+            price = 499.0,
+            originalPrice = 1499.0,
+            rating = 4.8,
+            enrolledCount = 2140,
+            totalLessons = 45,
+            totalMockTests = 20,
+            isEnrolled = false,
+            isFeatured = true,
+            isPremium = true,
+            lessons = listOf(
+                Lesson("l5", "course_anm_gnm_mastery", "Module 1: Life Science", "Cell Division: Mitosis & Meiosis Key Steps", "35:10 min", "", true, "LifeScience_CellDivision_Summary.pdf"),
+                Lesson("l6", "course_anm_gnm_mastery", "Module 1: Life Science", "Human Circulatory System & Blood Groups", "41:20 min", "", false, "Circulation_Quick_Review.pdf")
+            )
+        ),
+        Course(
+            id = "course_norcet_fasttrack",
+            title = "NORCET 10 AIIMS Nursing Officer All-India Intensive",
+            examCode = "NORCET_10",
+            description = "Clinical triage scenarios, mechanical ventilation, acid-base imbalances, image-based questions, and previous NORCET exam analysis.",
+            instructor = "AIIMS Nursing Alumni Council",
+            price = 899.0,
+            originalPrice = 2499.0,
+            rating = 4.9,
+            enrolledCount = 1860,
+            totalLessons = 40,
+            totalMockTests = 18,
+            isEnrolled = false,
+            isFeatured = true,
+            isPremium = true,
+            lessons = listOf(
+                Lesson("l7", "course_norcet_fasttrack", "Critical Care Nursing", "Arterial Blood Gas (ABG) Analysis in 3 Steps", "48:15 min", "", true, "ABG_Clinical_Reference.pdf"),
+                Lesson("l8", "course_norcet_fasttrack", "Intensive Care Unit", "Ventilator Modes & Waveform Interpretation", "55:30 min", "", false, "Ventilator_Management_Notes.pdf")
+            )
+        )
+    )
+
+    val studyMaterials = listOf(
+        StudyMaterial(
+            id = "sm1",
+            title = "Pharmacology High-Yield Drug Antidotes & Formulas Sheet",
+            examCode = "WBHRB_SN",
+            subject = "Pharmacology",
+            category = "Revision Notes",
+            fileType = "PDF",
+            pageCount = 28,
+            fileSize = "2.4 MB",
+            isFree = true,
+            downloadCount = 4820,
+            description = "Concise cheat sheet covering drug antidotes, therapeutic windows, contraindications, and IV calculation formulas."
+        ),
+        StudyMaterial(
+            id = "sm2",
+            title = "WBHRB Staff Nurse Previous 5 Years Solved Papers",
+            examCode = "WBHRB_SN",
+            subject = "Previous Year Questions",
+            category = "Previous Year Questions",
+            fileType = "PDF",
+            pageCount = 94,
+            fileSize = "8.2 MB",
+            isFree = true,
+            downloadCount = 5910,
+            description = "Official solved papers from previous recruitment exams with step-by-step rationales."
+        ),
+        StudyMaterial(
+            id = "sm3",
+            title = "ANM GNM Life Sciences Quick Revision Hand-Notes",
+            examCode = "ANM_GNM",
+            subject = "Life Science",
+            category = "Short Notes",
+            fileType = "PDF",
+            pageCount = 64,
+            fileSize = "5.1 MB",
+            isFree = true,
+            downloadCount = 6320,
+            description = "Point-to-point notes for Grade 10 Life Science syllabus covering Genetics, Cell Biology, and Organ Systems."
+        ),
+        StudyMaterial(
+            id = "sm4",
+            title = "West Bengal Public Health Schemes & IPHS Norms 2026",
+            examCode = "WB_CHO",
+            subject = "Community Health",
+            category = "Notes",
+            fileType = "PDF",
+            pageCount = 42,
+            fileSize = "3.8 MB",
+            isFree = true,
+            downloadCount = 3740,
+            description = "Key guidelines for Swasthya Sathi, National Health Mission, and Ayushman Arogya Mandir standards."
+        ),
+        StudyMaterial(
+            id = "sm5",
+            title = "AIIMS NORCET High-Yield Clinical Scenarios & Image Bank",
+            examCode = "NORCET_10",
+            subject = "Clinical Nursing",
+            category = "Practice Sets",
+            fileType = "PDF",
+            pageCount = 88,
+            fileSize = "11.6 MB",
+            isFree = false,
+            downloadCount = 4120,
+            description = "Color illustrations of surgical instruments, ECG rhythms, tracheostomy care, and wound dressings."
+        )
+    )
+
+    val notifications = listOf(
+        AppNotification(
+            id = "notif_1",
+            title = "WBHRB Staff Nurse Grade II 2026 Notification Released",
+            message = "Official recruitment bulletin is now available. Start your preparation with our verified mock test series.",
+            timeAgo = "1 hour ago",
+            type = "EXAM_UPDATE",
+            isRead = false
+        ),
+        AppNotification(
+            id = "notif_2",
+            title = "New Full Length Mock Test Added",
+            message = "ANM GNM 2026 Mock Test 01 is now live with updated question patterns and negative marking analytics.",
+            timeAgo = "3 hours ago",
+            type = "NEW_TEST",
+            isRead = false
+        ),
+        AppNotification(
+            id = "notif_3",
+            title = "New Pharmacology Drug Sheet Added",
+            message = "Download the latest High-Yield Antidote & Formula Sheet from the Study Materials tab.",
+            timeAgo = "1 day ago",
+            type = "MATERIAL",
+            isRead = true
+        ),
+        AppNotification(
+            id = "notif_4",
+            title = "Special Course Enrollment Offer",
+            message = "Use code BANGLA50 to get up to ₹500 off on all Ranker Preparation Batches this week.",
+            timeAgo = "2 days ago",
+            type = "ANNOUNCEMENT",
+            isRead = true
+        )
+    )
+
+    val initialStudents = listOf(
+        StudentUser("std_1", "Priyanka Mondal", "priyanka.mondal@gmail.com", "+91 98301 24567", "BEP-2026-891", "ANM_GNM", UserRole.STUDENT, false, 2, 8, "2026-01-10", "Active Today"),
+        StudentUser("std_2", "Sourav Mukherjee", "sourav.nursing@gmail.com", "+91 98745 11234", "BEP-2026-442", "WBHRB_SN", UserRole.STUDENT, false, 1, 14, "2026-01-18", "Active 2h ago"),
+        StudentUser("std_3", "Ananya Das", "ananya.jenpas@gmail.com", "+91 91234 56789", "BEP-2026-119", "JENPAS_UG", UserRole.STUDENT, false, 3, 21, "2026-02-01", "Active Yesterday"),
+        StudentUser("std_4", "Tanmoy Sen", "tanmoy.norcet@outlook.com", "+91 94331 88990", "BEP-2026-302", "NORCET_10", UserRole.STUDENT, false, 1, 6, "2026-02-15", "Active 3d ago"),
+        StudentUser("std_5", "Rima Biswas", "rima.wbcho@gmail.com", "+91 89021 34567", "BEP-2026-554", "WB_CHO", UserRole.STUDENT, false, 1, 9, "2026-02-28", "Active Today"),
+        StudentUser("std_admin", "Afjol SK (Super Admin)", "afjolsk0@gmail.com", "+91 98000 11223", "BEP-ADMIN-001", "WBHRB_SN", UserRole.ADMIN, false, 3, 40, "2026-01-01", "Active Now")
+    )
+
+    val initialTransactions = listOf(
+        TransactionRecord("tx_1", "RZP_ORD_982341", "Sourav Mukherjee", "WBHRB Staff Nurse Target Batch", 699.0, "2026-03-24", "Successful", "Razorpay UPI"),
+        TransactionRecord("tx_2", "RZP_ORD_982342", "Ananya Das", "JENPAS-UG Complete Course", 499.0, "2026-03-25", "Successful", "Razorpay Card"),
+        TransactionRecord("tx_3", "RZP_ORD_982343", "Tanmoy Sen", "NORCET 10 Grand Test Series", 199.0, "2026-03-26", "Successful", "Razorpay NetBanking"),
+        TransactionRecord("tx_4", "RZP_ORD_982344", "Priyanka Mondal", "ANM GNM Ranker Batch", 499.0, "2026-03-27", "Successful", "Razorpay UPI"),
+        TransactionRecord("tx_5", "RZP_ORD_982345", "Rima Biswas", "WB CHO Full Syllabus Course", 499.0, "2026-03-27", "Pending", "Razorpay UPI")
+    )
+
+    val initialCoupons = listOf(
+        Coupon("BANGLA50", 50, 500.0, 199.0, "2026-12-31", 142, 500, "All Courses", true),
+        Coupon("NURSE2026", 25, 250.0, 149.0, "2026-11-30", 88, 300, "All Courses", true),
+        Coupon("WBHEALTH", 30, 300.0, 249.0, "2026-10-31", 64, 250, "WBHRB & WB CHO", true)
+    )
+}

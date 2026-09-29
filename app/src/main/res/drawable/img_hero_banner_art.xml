@@ -1,0 +1,107 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="150dp"
+    android:viewportWidth="200"
+    android:viewportHeight="150">
+
+    <!-- Ambient Glow / Backdrop -->
+    <path
+        android:fillColor="#1E40AF"
+        android:pathData="M100,75m-65,0a65,65 0 1,1 130,0a65,65 0 1,1 -130,0" />
+    <path
+        android:fillColor="#3B82F6"
+        android:pathData="M110,65m-48,0a48,48 0 1,1 96,0a48,48 0 1,1 -96,0" />
+
+    <!-- Open Book Stack -->
+    <!-- Base Book -->
+    <path
+        android:fillColor="#1E293B"
+        android:pathData="M35,115 L145,115 L140,122 L30,122 Z" />
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M38,107 L142,107 L145,115 L35,115 Z" />
+    <!-- White Pages -->
+    <path
+        android:fillColor="#F8FAFC"
+        android:pathData="M42,95 L88,95 L88,107 L42,107 Z" />
+    <path
+        android:fillColor="#E2E8F0"
+        android:pathData="M92,95 L138,95 L138,107 L92,107 Z" />
+    <!-- Open Book Top -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M90,75 C75,70 52,70 38,74 L38,94 C52,90 75,90 90,96 C105,90 128,90 142,94 L142,74 C128,70 105,70 90,75 Z" />
+    <path
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.5"
+        android:pathData="M90,75 L90,96" />
+
+    <!-- Stethoscope -->
+    <!-- Tube -->
+    <path
+        android:strokeColor="#FBBF24"
+        android:strokeWidth="3.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000"
+        android:pathData="M135,50 C155,50 165,70 160,95 C155,115 130,125 110,120 C95,116 85,105 85,100" />
+    <!-- Stethoscope Bell / Chestpiece -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M135,50m-9,0a9,9 0 1,1 18,0a9,9 0 1,1 -18,0" />
+    <path
+        android:fillColor="#FEF3C7"
+        android:pathData="M135,50m-5,0a5,5 0 1,1 10,0a5,5 0 1,1 -10,0" />
+
+    <!-- Graduation Cap Floating Above -->
+    <path
+        android:fillColor="#0F172A"
+        android:pathData="M90,30 L45,46 L90,62 L135,46 Z" />
+    <path
+        android:fillColor="#1E3A8A"
+        android:pathData="M90,32 L50,46 L90,60 L130,46 Z" />
+    <path
+        android:strokeColor="#1E3A8A"
+        android:strokeWidth="3"
+        android:fillColor="#00000000"
+        android:pathData="M65,53 L65,65 C65,72 115,72 115,65 L115,53" />
+    <!-- Gold Tassel -->
+    <path
+        android:strokeColor="#FBBF24"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M120,50 L132,60 L132,74" />
+    <path
+        android:fillColor="#FBBF24"
+        android:pathData="M130,74 L134,74 L133,80 L131,80 Z" />
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M90,46m-3,0a3,3 0 1,1 6,0a3,3 0 1,1 -6,0" />
+
+    <!-- Star Badges / Sparkles -->
+    <!-- Top-Right Star -->
+    <path
+        android:fillColor="#FDE047"
+        android:pathData="M165,28 L168,36 L176,38 L170,44 L172,52 L165,47 L158,52 L160,44 L154,38 L162,36 Z" />
+    <!-- Small Sparkle Left -->
+    <path
+        android:fillColor="#67E8F9"
+        android:pathData="M30,45 L32,50 L37,52 L32,54 L30,59 L28,54 L23,52 L28,50 Z" />
+
+    <!-- Medical Cross Badge -->
+    <path
+        android:fillColor="#EF4444"
+        android:pathData="M48,78 H54 V82 H58 V88 H54 V92 H48 V88 H42 V82 H48 Z" />
+
+    <!-- Rank 1 / Topper Ribbon -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M145,95 L175,95 L170,110 L145,110 Z" />
+    <path
+        android:fillColor="#D97706"
+        android:pathData="M145,110 L170,110 L175,125 L160,118 L145,125 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M152,100 H155 V106 H152 Z M157,100 H163 V102 H160 V106 H157 Z" />
+</vector>

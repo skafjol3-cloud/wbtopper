@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Graduation Cap / Mortarboard -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,28 L30,39 L54,50 L78,39 Z" />
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M40,44.5 L40,55 C40,59 68,59 68,55 L68,44.5" />
+    <!-- Tassel -->
+    <path
+        android:strokeColor="#FBBF24"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M70,43 L76,49 L76,57" />
+    <path
+        android:fillColor="#FBBF24"
+        android:pathData="M74,57 L78,57 L77,61 L75,61 Z" />
+    <!-- Open Book Base -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,64 C48,60 36,60 28,62 L28,78 C36,76 48,76 54,80 C60,76 72,76 80,78 L80,62 C72,60 60,60 54,64 Z" />
+    <!-- Central Medical Cross Emblem on Book -->
+    <path
+        android:fillColor="#0284C7"
+        android:pathData="M52.5,67 H55.5 V71 H59.5 V74 H55.5 V78 H52.5 V74 H48.5 V71 H52.5 Z" />
+    <!-- Book Spine -->
+    <path
+        android:strokeColor="#93C5FD"
+        android:strokeWidth="1.5"
+        android:pathData="M54,64 L54,80" />
+</vector>

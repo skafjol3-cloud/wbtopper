@@ -1,4 +1,4 @@
-name: Build Android APK
+name: Build android AAB
 
 on:
   workflow_dispatch:
@@ -20,8 +20,7 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
+     
 
       - name: Grant permission
         run: chmod +x gradlew
